@@ -3,14 +3,14 @@
   "num_layers": 5,
   "hidden_size": 128,
   "activation": "relu",
-  "optimizer": "momentum",
+  "optimizer": "adam",
   "learning_rate": 0.01,
   "weight_decay": 0.0005,
   "batch_size": 32,
-  "epochs": 10,
+  "epochs": 20,
   "loss": "cross_entropy",
   "weight_init": "xavier",
   "input_size": 784,
   "output_size": 10,
-  "best_f1": 0.979813599458291
+  "best_f1": 0.9284743779427626
 }

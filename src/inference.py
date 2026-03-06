@@ -35,7 +35,7 @@ def parse_arguments():
 
     # ---- Training (kept so CLI is identical to train.py) ----
     parser.add_argument("-e", "--epochs",
-                        type=int, default=10)
+                        type=int, default=20)
 
     parser.add_argument("-b", "--batch_size",
                         type=int, default=32)
@@ -44,7 +44,7 @@ def parse_arguments():
                         type=float, default=0.01)
 
     parser.add_argument("-o", "--optimizer",
-                        type=str, default="momentum",
+                        type=str, default="adam",
                         choices=["sgd", "momentum", "nag", "rmsprop", "adam", "nadam"])
 
     parser.add_argument("-wd", "--weight_decay",
