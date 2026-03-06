@@ -57,7 +57,7 @@ def parse_arguments():
     # ---- Optimizer ----
     parser.add_argument("-o", "--optimizer",
                         type=str, default="rmsprop",
-                        choices=["sgd", "momentum", "nag", "rmsprop"],
+                        choices=["sgd", "momentum", "nag", "rmsprop", "adam", "nadam"],
                         help="Optimizer (default: rmsprop)")
 
     parser.add_argument("-wd", "--weight_decay",
@@ -88,7 +88,7 @@ def parse_arguments():
     # ---- Weight init ----
     parser.add_argument("-w_i", "--weight_init",
                         type=str, default="xavier",
-                        choices=["random", "xavier","zeros"],
+                        choices=["random", "xavier", "zeros"],
                         help="Weight initialization (default: xavier)")
 
     # ---- W&B ----
@@ -118,7 +118,7 @@ def parse_arguments():
     parser.add_argument("--input_size",  type=int, default=784)
     parser.add_argument("--output_size", type=int, default=10)
     
-    return parser.parse_args()
+    return parser.parse_known_args()
 
 
 def save_model(model: NeuralNetwork, save_path: str, config_path: str, args, best_f1: float = 0.0):

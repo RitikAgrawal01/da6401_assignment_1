@@ -45,7 +45,7 @@ def parse_arguments():
 
     parser.add_argument("-o", "--optimizer",
                         type=str, default="adam",
-                        choices=["sgd", "momentum", "nag", "rmsprop"])
+                        choices=["sgd", "momentum", "nag", "rmsprop", "adam", "nadam"])
 
     parser.add_argument("-wd", "--weight_decay",
                         type=float, default=0.0)
@@ -84,7 +84,7 @@ def parse_arguments():
     parser.add_argument("--output_size", type=int, default=10)
     parser.add_argument("--val_split",   type=float, default=0.1)
     
-    return parser.parse_args()
+    return parser.parse_known_args()
 
 
 def load_model(model_path):

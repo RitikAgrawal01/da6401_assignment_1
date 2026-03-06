@@ -42,12 +42,19 @@ class NeuralNetwork:
         activation   = getattr(args, "activation",   "relu")
         weight_init  = getattr(args, "weight_init",  "xavier")
 
+        # hidden_size can be int (uniform) or list (per-layer sizes)
+        if isinstance(hidden_size, list):
+            hidden_sizes = hidden_size
+            num_layers   = len(hidden_sizes)
+        else:
+            hidden_sizes = [hidden_size] * num_layers
+
         layers = []
         prev_size = input_size
 
-        for _ in range(num_layers):
-            layers.append(NeuralLayer(prev_size, hidden_size, activation, weight_init))
-            prev_size = hidden_size
+        for i in range(num_layers):
+            layers.append(NeuralLayer(prev_size, hidden_sizes[i], activation, weight_init))
+            prev_size = hidden_sizes[i]
 
         # Output layer — always linear (logits); softmax is in the loss
         layers.append(NeuralLayer(prev_size, output_size, "identity", weight_init))
