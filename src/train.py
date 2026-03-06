@@ -111,7 +111,7 @@ def parse_arguments():
 
     # ---- Data ----
     parser.add_argument("--val_split",
-                        type=float, default=0.1,
+                        type=float, default=0.05,
                         help="Fraction of training data for validation (default: 0.1)")
 
     # ---- Fixed architecture I/O (usually don't change) ----
