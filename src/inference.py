@@ -35,7 +35,7 @@ def parse_arguments():
 
     # ---- Training (kept so CLI is identical to train.py) ----
     parser.add_argument("-e", "--epochs",
-                        type=int, default=15)
+                        type=int, default=11)
 
     parser.add_argument("-b", "--batch_size",
                         type=int, default=32)
@@ -51,7 +51,7 @@ def parse_arguments():
                         type=float, default=0.0005)
 
     parser.add_argument("-nhl", "--num_layers",
-                        type=int, default=5)
+                        type=int, default=4)
 
     parser.add_argument("-sz", "--hidden_size",
                     type=int, default=128, nargs="+")

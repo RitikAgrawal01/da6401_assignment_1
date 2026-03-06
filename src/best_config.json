@@ -1,16 +1,16 @@
 {
   "dataset": "mnist",
-  "num_layers": 5,
+  "num_layers": 4,
   "hidden_size": 128,
   "activation": "relu",
   "optimizer": "momentum",
   "learning_rate": 0.01,
   "weight_decay": 0.0005,
   "batch_size": 32,
-  "epochs": 15,
+  "epochs": 11,
   "loss": "cross_entropy",
   "weight_init": "xavier",
   "input_size": 784,
   "output_size": 10,
-  "best_f1": 0.9751715453671714
+  "best_f1": 0.9762006702717174
 }
