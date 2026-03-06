@@ -12,5 +12,5 @@
   "weight_init": "xavier",
   "input_size": 784,
   "output_size": 10,
-  "best_f1": 0.9770102342845377
+  "best_f1": 0.9798083154569035
 }
