@@ -4,6 +4,7 @@
 
 ## Links
 🔗 **W&B Report**: https://api.wandb.ai/links/agrawalritik2001-/q3wd7ey9  
+🔗 **W&B Project**: https://wandb.ai/agrawalritik2001-/da6401_assignment_1  
 🔗 **GitHub**: https://github.com/RitikAgrawal01/da6401_assignment_1
 
 ---
