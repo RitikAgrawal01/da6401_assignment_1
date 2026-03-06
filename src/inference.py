@@ -48,7 +48,7 @@ def parse_arguments():
                         choices=["sgd", "momentum", "nag", "rmsprop", "adam", "nadam"])
 
     parser.add_argument("-wd", "--weight_decay",
-                        type=float, default=0.0005)
+                        type=float, default=0.001)
 
     parser.add_argument("-nhl", "--num_layers",
                         type=int, default=4)
