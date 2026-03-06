@@ -54,7 +54,7 @@ def parse_arguments():
                         type=int, default=3)
 
     parser.add_argument("-sz", "--hidden_size",
-                        type=int, default=128)
+                    type=int, default=128, nargs="+")
 
     parser.add_argument("-a", "--activation",
                         type=str, default="relu",
@@ -84,7 +84,10 @@ def parse_arguments():
     parser.add_argument("--output_size", type=int, default=10)
     parser.add_argument("--val_split",   type=float, default=0.1)
     
-    return parser.parse_known_args()
+    args, _ = parser.parse_known_args()
+    if isinstance(args.hidden_size, list) and len(args.hidden_size) == 1:
+        args.hidden_size = args.hidden_size[0]
+    return args
 
 
 def load_model(model_path):

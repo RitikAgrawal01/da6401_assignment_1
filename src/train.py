@@ -70,8 +70,8 @@ def parse_arguments():
                         help="Number of hidden layers (default: 3)")
 
     parser.add_argument("-sz", "--hidden_size",
-                        type=int, default=128,
-                        help="Number of neurons per hidden layer (default: 128)")
+                    type=int, default=128, nargs="+",
+                    help="Number of neurons per hidden layer (default: 128)")
 
     # ---- Activation ----
     parser.add_argument("-a", "--activation",
@@ -118,7 +118,10 @@ def parse_arguments():
     parser.add_argument("--input_size",  type=int, default=784)
     parser.add_argument("--output_size", type=int, default=10)
     
-    return parser.parse_known_args()
+    args, _ = parser.parse_known_args()
+    if isinstance(args.hidden_size, list) and len(args.hidden_size) == 1:
+        args.hidden_size = args.hidden_size[0]
+    return args
 
 
 def save_model(model: NeuralNetwork, save_path: str, config_path: str, args, best_f1: float = 0.0):
