@@ -35,7 +35,7 @@ def parse_arguments():
 
     # ---- Training (kept so CLI is identical to train.py) ----
     parser.add_argument("-e", "--epochs",
-                        type=int, default=10)
+                        type=int, default=15)
 
     parser.add_argument("-b", "--batch_size",
                         type=int, default=32)
