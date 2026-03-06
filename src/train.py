@@ -43,7 +43,7 @@ def parse_arguments():
 
     # ---- Training ----
     parser.add_argument("-e", "--epochs",
-                        type=int, default=10,
+                        type=int, default=20,
                         help="Number of training epochs (default: 10)")
 
     parser.add_argument("-b", "--batch_size",
@@ -61,7 +61,7 @@ def parse_arguments():
                         help="Optimizer (default: rmsprop)")
 
     parser.add_argument("-wd", "--weight_decay",
-                        type=float, default=0.0,
+                        type=float, default=0.0005,
                         help="L2 weight decay / regularization (default: 0.0)")
 
     # ---- Architecture ----
