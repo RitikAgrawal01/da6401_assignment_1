@@ -44,14 +44,14 @@ def parse_arguments():
                         type=float, default=0.01)
 
     parser.add_argument("-o", "--optimizer",
-                        type=str, default="adam",
+                        type=str, default="momentum",
                         choices=["sgd", "momentum", "nag", "rmsprop", "adam", "nadam"])
 
     parser.add_argument("-wd", "--weight_decay",
                         type=float, default=0.0005)
 
     parser.add_argument("-nhl", "--num_layers",
-                        type=int, default=5)
+                        type=int, default=6)
 
     parser.add_argument("-sz", "--hidden_size",
                     type=int, default=128, nargs="+")
