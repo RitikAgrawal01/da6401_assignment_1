@@ -43,14 +43,6 @@ class NeuralLayer:
     # Weight Initialization
     # ------------------------------------------------------------------
     def _initialize_weights(self, method: str):
-        """
-        Initialize W and b.
-
-        random : W ~ N(0, 0.01),  b = 0
-        xavier : W ~ N(0, sqrt(2 / (fan_in + fan_out))), b = 0
-                 (also known as Glorot normal initialization)
-        zeros  : W = 0, b = 0  (useful to demonstrate symmetry breaking)
-        """
         method = method.lower()
 
         if method == "random":
@@ -69,45 +61,21 @@ class NeuralLayer:
         b = np.zeros((1, self.output_size))
         return W, b
 
+
     # ------------------------------------------------------------------
     # Forward Pass
     # ------------------------------------------------------------------
     def forward(self, X: np.ndarray) -> np.ndarray:
-        """
-        Compute z = X @ W + b, then a = activation(z).
-
-        Parameters
-        ----------
-        X : ndarray of shape (batch_size, input_size)
-
-        Returns
-        -------
-        a : ndarray of shape (batch_size, output_size)
-        """
         self.X = X                              # cache input for backprop
         self.z = X @ self.W + self.b            # linear transform
         self.a = self.activation_fn.forward(self.z)  # apply activation
         return self.a
 
+
     # ------------------------------------------------------------------
     # Backward Pass
     # ------------------------------------------------------------------
     def backward(self, delta: np.ndarray, weight_decay: float = 0.0) -> np.ndarray:
-        """
-        Compute gradients for W, b and propagate delta to previous layer.
-
-        Parameters
-        ----------
-        delta       : ndarray of shape (batch_size, output_size)
-                      gradient of loss w.r.t. this layer's PRE-activation z
-                      (i.e. dL/dz for this layer)
-        weight_decay: L2 regularization coefficient (lambda)
-
-        Returns
-        -------
-        delta_prev  : ndarray of shape (batch_size, input_size)
-                      gradient to pass to the previous layer (dL/dz_prev)
-        """
         batch_size = self.X.shape[0]
 
         # Gradient w.r.t. W: (D_in, b) @ (b, D_out) / b  +  L2 term

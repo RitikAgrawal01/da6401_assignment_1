@@ -123,13 +123,6 @@ class RMSProp(BaseOptimizer):
 # Adam
 # ---------------------------------------------------------------------------
 class Adam(BaseOptimizer):
-    """
-    m_W  ←  b1 * m_W + (1 - b1) * grad_W          (first moment)
-    v_W  ←  b2 * v_W + (1 - b2) * grad_W^2         (second moment)
-    m̂_W  =  m_W / (1 - b1^t)                        (bias correction)
-    v̂_W  =  v_W / (1 - b2^t)
-    W    ←  W - lr * m̂_W / (sqrt(v̂_W) + eps)
-    """
     def __init__(self, learning_rate=0.001, beta1=0.9, beta2=0.999,
                  eps=1e-8, weight_decay=0.0):
         super().__init__(learning_rate, weight_decay)
@@ -173,10 +166,6 @@ class Adam(BaseOptimizer):
 # Nadam  (Nesterov + Adam)
 # ---------------------------------------------------------------------------
 class Nadam(BaseOptimizer):
-    """
-    Same as Adam but uses the Nesterov update for the first moment:
-    W ← W - lr_t * (b1*m̂_W + (1-b1)*grad_W/(1-b1^t)) / (sqrt(v̂_W) + eps)
-    """
     def __init__(self, learning_rate=0.001, beta1=0.9, beta2=0.999,
                  eps=1e-8, weight_decay=0.0):
         super().__init__(learning_rate, weight_decay)

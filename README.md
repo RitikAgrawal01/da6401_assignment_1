@@ -1,5 +1,7 @@
 # Assignment 1: Multi-Layer Perceptron for Image Classification
 
+**Name:** Ritik Agrawal | **Roll No:** DA25M026
+
 ## Links
 🔗 **W&B Report**: https://api.wandb.ai/links/agrawalritik2001-/q3wd7ey9  
 🔗 **GitHub**: https://github.com/RitikAgrawal01/da6401_assignment_1
@@ -123,9 +125,9 @@ python inference.py --model_path best_model.npy -d mnist
 | Hyperparameter | Value |
 |---------------|-------|
 | Dataset | MNIST |
-| Optimizer | RMSProp |
-| Learning Rate | 0.001 |
-| Hidden Layers | 3 |
+| Optimizer | momentum |
+| Learning Rate | 0.01 |
+| Hidden Layers | 5 |
 | Neurons/Layer | 128 |
 | Activation | ReLU |
 | Weight Init | Xavier |
