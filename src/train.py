@@ -43,7 +43,7 @@ def parse_arguments():
 
     # ---- Training ----
     parser.add_argument("-e", "--epochs",
-                        type=int, default=20,
+                        type=int, default=10,
                         help="Number of training epochs (default: 10)")
 
     parser.add_argument("-b", "--batch_size",
@@ -51,12 +51,12 @@ def parse_arguments():
                         help="Mini-batch size (default: 32)")
 
     parser.add_argument("-lr", "--learning_rate",
-                        type=float, default=0.001,
+                        type=float, default=0.01,
                         help="Learning rate (default: 0.001)")
 
     # ---- Optimizer ----
     parser.add_argument("-o", "--optimizer",
-                        type=str, default="rmsprop",
+                        type=str, default="adam",
                         choices=["sgd", "momentum", "nag", "rmsprop", "adam", "nadam"],
                         help="Optimizer (default: rmsprop)")
 
@@ -66,7 +66,7 @@ def parse_arguments():
 
     # ---- Architecture ----
     parser.add_argument("-nhl", "--num_layers",
-                        type=int, default=3,
+                        type=int, default=5,
                         help="Number of hidden layers (default: 3)")
 
     parser.add_argument("-sz", "--hidden_size",
