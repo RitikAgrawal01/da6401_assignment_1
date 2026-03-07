@@ -7,10 +7,10 @@
   "learning_rate": 0.01,
   "weight_decay": 0.0,
   "batch_size": 32,
-  "epochs": 10,
+  "epochs": 7,
   "loss": "cross_entropy",
   "weight_init": "xavier",
   "input_size": 784,
   "output_size": 10,
-  "best_f1": 0.9791938124567203
+  "best_f1": 0.9780484558919367
 }
